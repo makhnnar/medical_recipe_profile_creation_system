@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, CardContent, Typography, Button, TextField } from "@mui/material";
 
-export default function IdentitySaver() {
+export default function App() {
   const [identity, setIdentity] = useState({
     identityId: "",
     fullname: "",
