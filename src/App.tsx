@@ -3,19 +3,19 @@ import { Card, CardContent, Typography, Button, TextField } from "@mui/material"
 import { saveIdentityToFirestore } from "./FirebaseService";
 
 export interface Identity {
-  identityId: string;
-  fullname: string;
-  role: number | "";
+  id: string;
+  name: string;
+  tipo: number | "";
   privateKey: string;
   photo: string;
 }
 
 export default function IdentitySaver() {
   const [identity, setIdentity] = useState<Identity>({
-    identityId: "",
-    fullname: "",
-    role: "",
-    privateKey: "",
+    id: "",
+    name: "",
+    tipo: "",
+    dir: "",
     photo: ""
   });
 
@@ -62,9 +62,9 @@ export default function IdentitySaver() {
           <Typography variant="h6" gutterBottom>
             Identity Saver
           </Typography>
-          <TextField fullWidth margin="normal" label="Identity ID" name="identityId" value={identity.identityId} onChange={handleChange} />
-          <TextField fullWidth margin="normal" label="Full Name" name="fullname" value={identity.fullname} onChange={handleChange} />
-          <TextField fullWidth margin="normal" label="Role (integer)" name="role" type="number" value={identity.role} onChange={handleChange} />
+          <TextField fullWidth margin="normal" label="Identity ID" name="identityId" value={identity.id} onChange={handleChange} />
+          <TextField fullWidth margin="normal" label="Full Name" name="fullname" value={identity.name} onChange={handleChange} />
+          <TextField fullWidth margin="normal" label="Role (integer)" name="role" type="number" value={identity.tipo} onChange={handleChange} />
           <TextField fullWidth margin="normal" label="Private Key" name="privateKey" value={identity.privateKey} onChange={handleChange} />
           <input type="file" accept="image/*" onChange={handlePhotoUpload} style={{ marginTop: "16px" }} />
           {identity.photo && <img src={identity.photo} alt="Uploaded" style={{ width: "128px", height: "128px", objectFit: "cover", display: "block", margin: "16px auto" }} />}
