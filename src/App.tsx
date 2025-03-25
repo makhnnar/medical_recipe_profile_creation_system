@@ -8,6 +8,7 @@ export interface Identity {
   tipo: string;
   privateKey: string;
   photo: string;
+  dir: string;
 }
 
 const roles = [
@@ -23,7 +24,8 @@ export default function App() {
     name: "",
     tipo: "",
     privateKey: "",
-    photo: ""
+    photo: "",
+    dir: ""
   });
 
   const handleChange = (e: React.ChangeEvent<{ name?: string; value: unknown }> | React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>) => {
