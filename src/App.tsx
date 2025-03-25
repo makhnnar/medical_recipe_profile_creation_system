@@ -15,7 +15,7 @@ export default function IdentitySaver() {
     id: "",
     name: "",
     tipo: "",
-    dir: "",
+    privateKey: "",
     photo: ""
   });
 
