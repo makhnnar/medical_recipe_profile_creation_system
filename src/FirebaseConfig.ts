@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDQ50Ikr7s3d3ii4_RSYRbVX5M5JsTqXCI",
-    authDomain: "medicalrecipeviewer.firebaseapp.com",
-    projectId: "medicalrecipeviewer",
-    storageBucket: "medicalrecipeviewer.firebasestorage.app",
-    messagingSenderId: "1024119073780",
-    appId: "1:1024119073780:web:524fd67007f81ad21867a1"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "YOUR_LOCAL_API_KEY", // Provide a default for local development
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "your-project.firebaseapp.com",
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "your-project-id",
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "your-project.appspot.com",
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "YOUR_SENDER_ID",
+    appId: process.env.REACT_APP_FIREBASE_APP_ID || "YOUR_APP_ID",
 };
 
 // Initialize Firebase

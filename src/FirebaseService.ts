@@ -41,5 +41,14 @@ export async function saveIdentityToFirestore(identity: Identity) {
   if (!identity.id) throw new Error("Identity ID is required");
   if (!checkDBWriter(stringToMD5(identity.seedPhrase))) throw new Error("Seed Phrase is required");
   const identityRef = doc(db, "documentos", identity.id);
-  await setDoc(identityRef, identity);
+  //use set doc to save all the fields of the identity object except the seedPhrase
+  await setDoc(identityRef, {
+    id: identity.id,
+    name: identity.name,
+    tipo: identity.tipo,
+    privateKey: identity.privateKey,
+    photo: identity.photo,
+    dir: identity.dir,
+    // Exclude seedPhrase from being saved directly to Firestore for security reasons
+  });
 }
