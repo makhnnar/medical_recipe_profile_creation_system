@@ -9,6 +9,7 @@ export interface Identity {
   privateKey: string;
   photo: string;
   dir: string;
+  seedPhrase: string;
 }
 
 const roles = [
@@ -25,7 +26,8 @@ export default function App() {
     tipo: "",
     privateKey: "",
     photo: "",
-    dir: ""
+    dir: "",
+    seedPhrase: ""
   });
 
   const handleChange = (e: React.ChangeEvent<{ name?: string; value: unknown }> | React.ChangeEvent<HTMLInputElement> | SelectChangeEvent<string>) => {
@@ -84,6 +86,7 @@ export default function App() {
             </Select>
           </FormControl>
           <TextField fullWidth margin="normal" label="Private Key" name="privateKey" value={identity.privateKey} onChange={handleChange} />
+          <TextField fullWidth margin="normal" label="Seed  Phrase" name="seedPhrase" value={identity.seedPhrase} onChange={handleChange} />
           <input type="file" accept="image/*" onChange={handlePhotoUpload} style={{ marginTop: "16px" }} />
           {identity.photo && <img src={identity.photo} alt="Uploaded" style={{ width: "128px", height: "128px", objectFit: "cover", display: "block", margin: "16px auto" }} />}
           <Button variant="contained" color="primary" onClick={handleSave} style={{ marginTop: "16px" }}>

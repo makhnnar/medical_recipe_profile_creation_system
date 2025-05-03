@@ -15,6 +15,7 @@
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "firebase": "^11.5.0",
+    "js-md5": "^0.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
